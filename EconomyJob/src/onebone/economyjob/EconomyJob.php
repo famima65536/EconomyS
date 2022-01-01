@@ -106,8 +106,8 @@ class EconomyJob extends PluginBase implements Listener
 
 		$job = $this->jobs->get($this->player->get($player->getName()));
 		if($job !== false){
-			if(isset($job[$block->getID().":".$block->getDamage().":break"])){
-				$money = $job[$block->getID().":".$block->getDamage().":break"];
+			if(isset($job[$block->getID().":".$block->getMeta().":break"])){
+				$money = $job[$block->getID().":".$block->getMeta().":break"];
 				if($money > 0){
 					$this->api->addMoney($player, $money);
 				}else{
@@ -128,8 +128,8 @@ class EconomyJob extends PluginBase implements Listener
 
 		$job = $this->jobs->get($this->player->get($player->getName()));
 		if($job !== false){
-			if(isset($job[$block->getID().":".$block->getDamage().":place"])){
-				$money = $job[$block->getID().":".$block->getDamage().":place"];
+			if(isset($job[$block->getID().":".$block->getMeta().":place"])){
+				$money = $job[$block->getID().":".$block->getMeta().":place"];
 				if($money > 0){
 					$this->api->addMoney($player, $money);
 				}else{
